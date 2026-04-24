@@ -7,8 +7,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors()); // Enable CORS
-app.use(express.json()); // Accept application/json
+app.use(cors({
+  origin: '*', 
+  methods: ['GET', 'POST', 'OPTIONS'], // Explicitly allow these methods
+  allowedHeaders: ['Content-Type'] 
+})); 
+app.use(express.json());
 
 // Routes
 app.use('/bfhl', bfhlRoutes);
