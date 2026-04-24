@@ -1,5 +1,6 @@
 import { processNodes } from '../src/utils/treeProcessor.js';
 
+
 describe('Tree Processor Logic', () => {
   it('should process the PDF example correctly', () => {
     const input = [
